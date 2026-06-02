@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+  <defs>
+    <linearGradient id="bg" x1="18" y1="16" x2="145" y2="146" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#173F75"/>
+      <stop offset=".52" stop-color="#2867C7"/>
+      <stop offset="1" stop-color="#7C4DFF"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="67" y1="36" x2="134" y2="119" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8FE8FF"/>
+      <stop offset="1" stop-color="#F7D6FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="160" height="160" rx="34" fill="url(#bg)"/>
+  <path d="M25 35c0-9 20-16 45-16s45 7 45 16v67c0 10-20 18-45 18s-45-8-45-18V35Z" fill="#0A2451" opacity=".3"/>
+  <ellipse cx="70" cy="36" rx="43" ry="16" fill="#EAF8FF"/>
+  <path d="M27 36v29c0 9 19 16 43 16s43-7 43-16V36" fill="#B7DEFF" opacity=".88"/>
+  <path d="M27 66v28c0 9 19 16 43 16s43-7 43-16V66" fill="#8BC7FF" opacity=".95"/>
+  <ellipse cx="70" cy="66" rx="43" ry="16" fill="none" stroke="#F2FBFF" stroke-width="4" opacity=".9"/>
+  <ellipse cx="70" cy="94" rx="43" ry="16" fill="none" stroke="#EAF8FF" stroke-width="4" opacity=".92"/>
+  <ellipse cx="70" cy="36" rx="31" ry="9" fill="#8AC6FF" opacity=".55"/>
+  <circle cx="117" cy="105" r="26" fill="#102D69" stroke="#DDF7FF" stroke-width="4"/>
+  <path d="m118 79 5 16 16 5-16 5-5 16-5-16-16-5 16-5 5-16Z" fill="url(#shine)"/>
+  <path d="m139 72 2.5 7.5L149 82l-7.5 2.5L139 92l-2.5-7.5L129 82l7.5-2.5L139 72Z" fill="#FFF3C4"/>
+</svg>

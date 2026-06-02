@@ -1,0 +1,40 @@
+{
+  "name": "siyuan-database-ai",
+  "author": "moonejue",
+  "url": "https://github.com/moonejue/siyuan-database-ai",
+  "version": "0.3.0",
+  "minAppVersion": "3.6.5",
+  "backends": ["all"],
+  "frontends": ["desktop", "browser-desktop", "desktop-window"],
+  "displayName": {
+    "default": "Database AI Applications",
+    "zh_CN": "数据库 AI 应用"
+  },
+  "description": {
+    "default": "Run local or third-party AI and spreadsheet-like formulas on SiYuan database columns.",
+    "zh_CN": "在思源数据库中使用本地或第三方 AI 和类 Excel 公式进行整列自动化处理。"
+  },
+  "readme": {
+    "default": "README.md",
+    "zh_CN": "README_zh_CN.md"
+  },
+  "funding": {
+    "custom": [
+      "https://raw.githubusercontent.com/moonejue/siyuan-database-ai/main/assets/donate-wechat.jpg"
+    ]
+  },
+  "keywords": [
+    "ai",
+    "database",
+    "automation",
+    "ollama",
+    "openai",
+    "deepseek",
+    "claude",
+    "gemini",
+    "formula",
+    "数据库",
+    "自动化",
+    "本地模型"
+  ]
+}
