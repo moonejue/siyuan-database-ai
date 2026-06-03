@@ -4,6 +4,7 @@ const { Dialog, Plugin, showMessage } = require("siyuan");
 
 const PLUGIN_NAME = "siyuan-database-ai";
 const SETTINGS_KEY = `${PLUGIN_NAME}:settings`;
+const SETTINGS_FILE = "settings.json";
 const DATABASE_SELECTOR = '[data-type="NodeAttributeView"][data-av-id], .av[data-av-id]';
 const PROVIDER_PRESETS = {
   ollama: { label: "Ollama（本机）", protocol: "ollama", endpoint: "http://127.0.0.1:11434", model: "" },
@@ -107,18 +108,21 @@ async function siyuanPost(path, data = {}) {
   return payload.data;
 }
 
-function loadSettings() {
-  const defaults = {
+function defaultSettings() {
+  return {
     preset: "ollama",
     protocol: "ollama",
     endpoint: "http://127.0.0.1:11434",
     model: "",
     apiKey: "",
   };
+}
+
+function loadLegacySettings() {
   try {
-    return { ...defaults, ...JSON.parse(localStorage.getItem(SETTINGS_KEY) || "{}") };
+    return JSON.parse(localStorage.getItem(SETTINGS_KEY) || "{}");
   } catch {
-    return defaults;
+    return {};
   }
 }
 
@@ -429,7 +433,7 @@ class DatabaseAIPlugin extends Plugin {
   async openPanel(avID) {
     try {
       const database = await siyuanPost("/api/av/renderAttributeView", { id: avID, pageSize: -1 });
-      const settings = loadSettings();
+      const settings = await this.loadSettings();
       const columns = database.view.columns || [];
       const firstColumn = columns[0]?.id || "";
       const presetOptions = Object.entries(PROVIDER_PRESETS)
@@ -537,6 +541,29 @@ class DatabaseAIPlugin extends Plugin {
       console.error(`[${PLUGIN_NAME}] open panel failed`, error);
       showMessage(`打开数据库失败：${error.message}`);
     }
+  }
+
+  async loadSettings() {
+    const defaults = defaultSettings();
+    let stored = {};
+    try {
+      stored = (await this.loadData(SETTINGS_FILE)) || {};
+    } catch (error) {
+      console.warn(`[${PLUGIN_NAME}] load settings failed`, error);
+    }
+    const legacy = loadLegacySettings();
+    const settings = { ...defaults, ...legacy, ...stored };
+    if (Object.keys(legacy).length && !Object.keys(stored).length) {
+      await this.saveSettings(settings);
+    }
+    return settings;
+  }
+
+  async saveSettings(settings) {
+    const normalized = { ...defaultSettings(), ...settings };
+    saveSettings(normalized);
+    await this.saveData(SETTINGS_FILE, normalized);
+    return normalized;
   }
 
   bindPanel(dialog, database, settings) {
@@ -678,9 +705,14 @@ class DatabaseAIPlugin extends Plugin {
       role("model-status").textContent =
         field("preset").value === "custom" ? "请填写第三方接口地址、API Key 和模型名称" : `已切换到 ${preset.label}`;
     });
-    root.querySelector('[data-action="save-settings"]').addEventListener("click", () => {
-      saveSettings(readSettings());
-      role("model-status").textContent = "设置已保存在本机";
+    root.querySelector('[data-action="save-settings"]').addEventListener("click", async () => {
+      try {
+        await this.saveSettings(readSettings());
+        role("model-status").textContent = "设置已保存，重启后仍会保留";
+      } catch (error) {
+        console.error(`[${PLUGIN_NAME}] save settings failed`, error);
+        role("model-status").textContent = `保存失败：${error.message}`;
+      }
     });
     root.querySelector('[data-action="detect-models"]').addEventListener("click", async () => {
       role("model-status").textContent = "正在检测...";

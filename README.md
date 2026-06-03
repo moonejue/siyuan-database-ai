@@ -15,6 +15,7 @@ Bring configurable AI automation to SiYuan databases.
 - Extract structured information such as names, phone numbers, and tags.
 - Fill numeric columns with spreadsheet-like formulas.
 - Preview the first 3 rows before applying an operation to a full column.
+- Persist AI model settings in SiYuan plugin data and restore them after restart.
 
 ## Model Support
 
