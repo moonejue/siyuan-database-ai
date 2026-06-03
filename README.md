@@ -44,6 +44,20 @@ Supported functions: `SUM`, `AVG`, `MIN`, `MAX`, `ROUND`, `ABS`, `COUNT`, `POW`,
 4. Choose an operation, input fields, and an output field.
 5. Preview the first rows, then apply the operation to the full column.
 
+## Changelog
+
+### v0.3.1
+
+- Fixed AI model settings being lost after restarting SiYuan.
+- Model settings are now persisted in SiYuan plugin data and restored automatically.
+- Added migration from legacy browser local storage settings on first panel open.
+
+### v0.3.0
+
+- Changed custom AI input fields to a checkbox list.
+- Custom AI can now use any one or more fields from the current database.
+- Added select all and clear actions for input fields.
+
 ## Support
 
 If this plugin helps you, you can support the author via WeChat Pay.
