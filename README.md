@@ -46,6 +46,10 @@ Supported functions: `SUM`, `AVG`, `MIN`, `MAX`, `ROUND`, `ABS`, `COUNT`, `POW`,
 
 ## Changelog
 
+### v0.3.3
+
+- Updated the WeChat donation QR code used by the README and plugin assets.
+
 ### v0.3.2
 
 - Disabled the plugin in publish mode, following the marketplace review requirement for plugins that store AI configuration.
