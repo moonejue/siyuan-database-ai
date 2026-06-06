@@ -46,6 +46,11 @@ Supported functions: `SUM`, `AVG`, `MIN`, `MAX`, `ROUND`, `ABS`, `COUNT`, `POW`,
 
 ## Changelog
 
+### v0.3.2
+
+- Disabled the plugin in publish mode, following the marketplace review requirement for plugins that store AI configuration.
+- Added uninstall cleanup for persisted model settings and legacy browser local storage settings.
+
 ### v0.3.1
 
 - Fixed AI model settings being lost after restarting SiYuan.

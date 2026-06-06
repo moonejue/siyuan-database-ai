@@ -369,6 +369,19 @@ class DatabaseAIPlugin extends Plugin {
     document.querySelectorAll(".moon-db-ai-launcher").forEach((element) => element.remove());
   }
 
+  async uninstall() {
+    try {
+      await this.removeData(SETTINGS_FILE);
+    } catch (error) {
+      console.warn(`[${PLUGIN_NAME}] remove settings failed`, error);
+    }
+    try {
+      localStorage.removeItem(SETTINGS_KEY);
+    } catch (error) {
+      console.warn(`[${PLUGIN_NAME}] remove legacy settings failed`, error);
+    }
+  }
+
   decorateDatabases() {
     getVisibleDatabases().forEach(({ avID, element }) => {
       const root = element.matches('[data-type="NodeAttributeView"]')
