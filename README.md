@@ -46,6 +46,11 @@ Supported functions: `SUM`, `AVG`, `MIN`, `MAX`, `ROUND`, `ABS`, `COUNT`, `POW`,
 
 ## Changelog
 
+### v0.3.4
+
+- Refined the AI tool panel with the Moon Teacher brand style: warm off-white, mist green, tea gray, and soft gold.
+- Updated the plugin logo and marketplace preview image to match the brand identity.
+
 ### v0.3.3
 
 - Updated the WeChat donation QR code used by the README and plugin assets.

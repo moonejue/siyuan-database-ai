@@ -10,20 +10,42 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  padding: 4px 9px;
-  border-radius: 14px;
-  background: var(--b3-theme-background);
-  color: var(--b3-theme-primary);
+  padding: 5px 11px;
+  border: 1px solid rgba(187, 159, 104, 0.38);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #fffdf7 0%, #edf4ef 100%);
+  color: #6e604a;
+  box-shadow: 0 8px 24px rgba(91, 80, 61, 0.12);
   font-size: 12px;
+  font-weight: 600;
 }
 
 .moon-db-ai-launcher__spark {
   font-size: 16px;
+  color: #c7a85d;
 }
 
 .moon-db-ai {
+  --moon-ai-ink: #4f4a40;
+  --moon-ai-muted: #8a8274;
+  --moon-ai-paper: #fffdf7;
+  --moon-ai-surface: #f7f3ea;
+  --moon-ai-mist: #edf4ef;
+  --moon-ai-mist-strong: #d9e7de;
+  --moon-ai-gold: #c7a85d;
+  --moon-ai-tea: #7f735c;
+  --moon-ai-border: rgba(127, 115, 92, 0.18);
+  --moon-ai-shadow: 0 18px 48px rgba(79, 74, 64, 0.12);
   display: grid;
   gap: 14px;
+  color: var(--moon-ai-ink);
+  background:
+    radial-gradient(circle at 94% 5%, rgba(199, 168, 93, 0.2), transparent 30%),
+    linear-gradient(135deg, var(--moon-ai-paper), var(--moon-ai-mist));
+  border: 1px solid var(--moon-ai-border);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: var(--moon-ai-shadow);
 }
 
 .moon-db-ai-toolbar,
@@ -37,30 +59,81 @@
 
 .moon-db-ai-toolbar {
   justify-content: space-between;
+  gap: 16px;
+  padding: 2px 2px 10px;
+  border-bottom: 1px solid rgba(127, 115, 92, 0.14);
+}
+
+.moon-db-ai-toolbar strong {
+  color: #3f3a32;
+  font-size: 17px;
+  letter-spacing: 0.02em;
 }
 
 .moon-db-ai-toolbar small {
   display: block;
   margin-top: 4px;
-  color: var(--b3-theme-on-surface-light);
+  color: var(--moon-ai-muted);
+}
+
+.moon-db-ai .b3-button {
+  border-radius: 999px;
+}
+
+.moon-db-ai .b3-button--outline {
+  border-color: rgba(127, 115, 92, 0.28);
+  background: rgba(255, 253, 247, 0.76);
+  color: var(--moon-ai-tea);
+}
+
+.moon-db-ai .b3-button--outline:hover {
+  border-color: rgba(199, 168, 93, 0.7);
+  background: #fff9e8;
+  color: #67563b;
+}
+
+.moon-db-ai .b3-button--text {
+  background: linear-gradient(135deg, #b99a50, #d8bf76);
+  color: #fffdf7;
+  box-shadow: 0 10px 24px rgba(185, 154, 80, 0.2);
+}
+
+.moon-db-ai .b3-button--text:hover {
+  background: linear-gradient(135deg, #a98943, #cfb365);
 }
 
 .moon-db-ai-settings {
   display: grid;
   grid-template-columns: 130px 1.4fr 1fr 1fr;
   gap: 10px;
-  padding: 12px;
-  border: 1px solid var(--b3-border-color);
-  border-radius: 8px;
-  background: var(--b3-theme-surface);
+  padding: 14px;
+  border: 1px solid var(--moon-ai-border);
+  border-radius: 14px;
+  background: rgba(255, 253, 247, 0.74);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
 .moon-db-ai-settings label,
 .moon-db-ai-form label {
   display: grid;
   gap: 5px;
-  color: var(--b3-theme-on-surface);
+  color: var(--moon-ai-ink);
   font-size: 12px;
+  font-weight: 600;
+}
+
+.moon-db-ai .b3-select,
+.moon-db-ai .b3-text-field {
+  border-color: rgba(127, 115, 92, 0.22);
+  border-radius: 10px;
+  background-color: rgba(255, 253, 247, 0.9);
+  color: var(--moon-ai-ink);
+}
+
+.moon-db-ai .b3-select:focus,
+.moon-db-ai .b3-text-field:focus {
+  border-color: rgba(199, 168, 93, 0.85);
+  box-shadow: 0 0 0 3px rgba(199, 168, 93, 0.14);
 }
 
 .moon-db-ai-settings__actions {
@@ -70,7 +143,7 @@
 .moon-db-ai-settings__notice {
   grid-column: 1 / -1;
   margin: 0;
-  color: var(--b3-theme-on-surface-light);
+  color: var(--moon-ai-muted);
   font-size: 12px;
   line-height: 1.55;
 }
@@ -83,7 +156,9 @@
 
 .moon-db-ai h3 {
   margin: 0 0 10px;
+  color: #4a4438;
   font-size: 15px;
+  font-weight: 700;
 }
 
 .moon-db-ai-cards,
@@ -98,23 +173,26 @@
   gap: 8px;
   align-items: center;
   width: 100%;
-  padding: 10px;
-  border: 1px solid var(--b3-border-color);
-  border-radius: 8px;
-  background: var(--b3-theme-background);
-  color: var(--b3-theme-on-background);
+  padding: 11px;
+  border: 1px solid rgba(127, 115, 92, 0.16);
+  border-radius: 14px;
+  background: rgba(255, 253, 247, 0.78);
+  color: var(--moon-ai-ink);
   text-align: left;
   cursor: pointer;
+  transition: border-color 0.18s ease, background 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
 }
 
 .moon-db-ai-card:hover,
 .moon-db-ai-card.active {
-  border-color: var(--b3-theme-primary);
-  background: var(--b3-theme-primary-lightest);
+  border-color: rgba(199, 168, 93, 0.72);
+  background: linear-gradient(135deg, #fff9e8, #edf4ef);
+  box-shadow: 0 10px 26px rgba(127, 115, 92, 0.12);
+  transform: translateY(-1px);
 }
 
 .moon-db-ai-card__icon {
-  color: var(--b3-theme-primary);
+  color: var(--moon-ai-gold);
   font-size: 22px;
   text-align: center;
 }
@@ -122,14 +200,15 @@
 .moon-db-ai-card__body small {
   display: block;
   margin-top: 3px;
-  color: var(--b3-theme-on-surface-light);
+  color: var(--moon-ai-muted);
 }
 
 .moon-db-ai-badge {
-  padding: 2px 5px;
-  border-radius: 5px;
-  background: #eee6ff;
-  color: #8b3dff;
+  padding: 2px 6px;
+  border: 1px solid rgba(199, 168, 93, 0.22);
+  border-radius: 999px;
+  background: #fff4cf;
+  color: #9b7c34;
   font-size: 11px;
   font-weight: 700;
 }
@@ -139,7 +218,7 @@
 }
 
 .moon-db-ai-form small {
-  color: var(--b3-theme-on-surface-light);
+  color: var(--moon-ai-muted);
   line-height: 1.55;
 }
 
@@ -153,7 +232,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 8px;
-  color: var(--b3-theme-on-surface);
+  color: var(--moon-ai-ink);
   font-size: 12px;
 }
 
@@ -174,9 +253,9 @@
   max-height: 164px;
   overflow: auto;
   padding: 8px;
-  border: 1px solid var(--b3-border-color);
-  border-radius: 6px;
-  background: var(--b3-theme-surface);
+  border: 1px solid var(--moon-ai-border);
+  border-radius: 12px;
+  background: rgba(247, 243, 234, 0.74);
 }
 
 .moon-db-ai-source {
@@ -185,14 +264,16 @@
   align-items: center;
   gap: 6px !important;
   min-width: 0;
-  padding: 5px 7px;
-  border-radius: 5px;
-  background: var(--b3-theme-background);
+  padding: 6px 8px;
+  border: 1px solid rgba(127, 115, 92, 0.11);
+  border-radius: 10px;
+  background: rgba(255, 253, 247, 0.82);
   cursor: pointer;
 }
 
 .moon-db-ai-source:hover {
-  background: var(--b3-theme-primary-lightest);
+  background: #fff9e8;
+  border-color: rgba(199, 168, 93, 0.45);
 }
 
 .moon-db-ai-source span {
@@ -203,6 +284,7 @@
 
 .moon-db-ai-source small {
   margin-left: auto;
+  color: var(--moon-ai-muted);
   font-size: 10px;
 }
 
@@ -214,7 +296,7 @@
 
 .moon-db-ai-progress {
   min-height: 18px;
-  color: var(--b3-theme-on-surface-light);
+  color: var(--moon-ai-muted);
   font-size: 12px;
 }
 
@@ -230,9 +312,9 @@
   max-height: 210px;
   overflow: auto;
   padding: 12px;
-  border: 1px solid var(--b3-border-color);
-  border-radius: 8px;
-  background: var(--b3-theme-surface);
+  border: 1px solid var(--moon-ai-border);
+  border-radius: 14px;
+  background: rgba(255, 253, 247, 0.78);
 }
 
 .moon-db-ai-preview__row {
@@ -240,11 +322,18 @@
   grid-template-columns: 72px 1fr;
   gap: 10px;
   padding: 8px 0;
-  border-top: 1px solid var(--b3-border-color);
+  border-top: 1px solid rgba(127, 115, 92, 0.14);
   line-height: 1.55;
 }
 
 .moon-db-ai-picker {
   display: grid;
   gap: 8px;
+}
+
+.moon-db-ai-picker .b3-button {
+  border-color: rgba(127, 115, 92, 0.22);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #fffdf7, #edf4ef);
+  color: #6e604a;
 }
