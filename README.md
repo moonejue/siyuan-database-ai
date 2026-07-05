@@ -2,9 +2,7 @@
 
 Bring configurable AI automation to SiYuan databases.
 
-![Preview](preview.png)
-
-[中文说明](README_zh_CN.md)
+[中文说明](https://github.com/moonejue/siyuan-database-ai/blob/main/README_zh_CN.md)
 
 ## Features
 
@@ -46,6 +44,10 @@ Supported functions: `SUM`, `AVG`, `MIN`, `MAX`, `ROUND`, `ABS`, `COUNT`, `POW`,
 
 ## Changelog
 
+### v0.3.5
+
+- Updated README links and image references to meet SiYuan marketplace review requirements.
+
 ### v0.3.4
 
 - Refined the AI tool panel with the Moon Teacher brand style: warm off-white, mist green, tea gray, and soft gold.
@@ -76,8 +78,8 @@ Supported functions: `SUM`, `AVG`, `MIN`, `MAX`, `ROUND`, `ABS`, `COUNT`, `POW`,
 
 If this plugin helps you, you can support the author via WeChat Pay.
 
-<img src="assets/donate-wechat.jpg" alt="WeChat Pay donation QR code" width="320">
+<img src="https://raw.githubusercontent.com/moonejue/siyuan-database-ai/main/assets/donate-wechat.jpg" alt="WeChat Pay donation QR code" width="320">
 
 ## License
 
-[MIT](LICENSE)
+[MIT](https://github.com/moonejue/siyuan-database-ai/blob/main/LICENSE)

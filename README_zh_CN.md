@@ -2,8 +2,6 @@
 
 让思源数据库拥有可配置的 AI 自动化能力。
 
-![功能预览](preview.png)
-
 ## 功能
 
 - 在数据库右上角增加 `AI 应用` 入口。
@@ -50,6 +48,10 @@ SUM({收入},-{支出})
 
 ## 更新说明
 
+### v0.3.5
+
+- 按思源集市审核要求，移除 README 内嵌预览图，并将文档链接、许可证链接与赞赏码图片改为 GitHub 绝对 URL。
+
 ### v0.3.4
 
 - 将 AI 工具面板更新为月亮老师品牌风格：月白、雾青、茶色与温润金，整体更柔和克制。
@@ -79,8 +81,8 @@ SUM({收入},-{支出})
 
 如果这个插件对你有帮助，可以请作者喝杯茶。
 
-<img src="assets/donate-wechat.jpg" alt="微信赞赏码" width="320">
+<img src="https://raw.githubusercontent.com/moonejue/siyuan-database-ai/main/assets/donate-wechat.jpg" alt="微信赞赏码" width="320">
 
 ## 许可证
 
-[MIT](LICENSE)
+[MIT](https://github.com/moonejue/siyuan-database-ai/blob/main/LICENSE)

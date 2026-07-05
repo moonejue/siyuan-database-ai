@@ -2,7 +2,7 @@
   "name": "siyuan-database-ai",
   "author": "moonejue",
   "url": "https://github.com/moonejue/siyuan-database-ai",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "minAppVersion": "3.6.5",
   "disabledInPublish": true,
   "backends": ["all"],
